@@ -15,11 +15,25 @@ class Image {
 }
 
 function getDataFromImage(img) {
+    /*
+    var c = document.createElement("canvas");
+    c.width = img.width;
+    c.height = img.height;
+
+    var ctx1 = c.getContext("2d");
+    ctx1.drawImage(img, 0, 0);
+
+    var strDataURI = c.toDataURL();
+    var img2 = new Image;
+    img2.onload = function () {
+        ctx.drawImage(img2, 0, 0);
+    }
+    img2.src = strDataURI;
+    */
+
     var canvas = document.createElement("canvas");
     canvas.width = 100;
     canvas.height = 100;
-
-    document.getElementById("gsr").appendChild(canvas);
 
     var ctx = canvas.getContext("2d");
     ctx.scale(100 / img.width, 100 / img.height);
@@ -78,4 +92,26 @@ for (var i = 0; i < imageObs.length; i++) {
   imageObs[i].unblock();
 }
 
-console.log(getDataFromImage(allImages[0]));
+d = getDataFromImage(allImages[0]);
+
+console.log(d);
+
+c = document.createElement("canvas");
+c.width = 100;
+c.height = 100;
+ctx = c.getContext("2d");
+
+document.getElementById("bdy").appendChild(c);
+
+for (var x = 0; x < 100; x ++) {
+    for (var y = 0; y < 100; y ++) {
+        var r = d[x][y][0] * 255;
+        var g = d[x][y][1] * 255;
+        var b = d[x][y][2] * 255;
+        console.log(r);
+
+        ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+        console.log(ctx.fillStyle);
+        ctx.fillRect(x, y, 1, 1);
+    }
+}
