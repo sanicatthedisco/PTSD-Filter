@@ -1,3 +1,9 @@
+function unblock(images) {
+  for (var i = 0; i < images.length; i++) {
+    images[i].style.display = "block";
+  }
+}
+
 var allImages = document.getElementsByTagName("img");
 var imgSrcs = [];
 for (var i = 0; i < allImages.length; i ++) {
