@@ -22,5 +22,6 @@
           "mac": "MacCtrl+Shift+F"
         },
         "description": "Opens index.html"
-      }
+    },
+    "permissions": ["activeTab"]
 }
