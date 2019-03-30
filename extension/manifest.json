@@ -8,7 +8,7 @@
         "persistent": false
     },
     "content_scripts": [{
-        "matches": ["https://encrypted.google.com/*"],
+        "matches": ["https://www.google.com/", "https://www.google.com/"],
         "js": ["content.js"]
     }],
     "browser_action": {
