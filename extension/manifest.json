@@ -6,10 +6,12 @@
     "background": {
         "page":"background.html"
     },
-    "content_scripts": [{
-        "matches": ["https://www.google.com/", "https://www.google.com/"],
-        "js": ["content.js"]
-    }],
+    "content_scripts": [
+        {
+            "matches": ["https://www.google.com/", "https://www.google.com/"],
+            "js": ["content.js"]
+        }
+    ],
     "browser_action": {
       "default_popup":"index.html",
       "default_icon":"icon.png"
@@ -23,5 +25,6 @@
         "description": "Opens index.html"
     }
   },
-    "permissions": ["activeTab", "tabs", "background", "downloads"]
+"permissions": ["activeTab", "tabs", "background", "downloads"],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
