@@ -1,0 +1,6 @@
+{
+  "name":"PTSD Filter",
+  "description":"Extension to block images that may trigger PTSD using a neural network",
+  "version":"0.1",
+  "manifest_version":1
+}
