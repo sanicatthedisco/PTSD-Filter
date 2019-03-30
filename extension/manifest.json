@@ -1,19 +1,26 @@
 {
-  "name":"PTSD Filter",
-  "description":"Extension to block images that may trigger PTSD using a neural network",
-  "version":"0.1",
-  "manifest_version":2,
-  "browser_action": {
-    "default_popup":"index.html",
-    "default_icon":"icon.png"
-  },
-  "commands": {
-    "_execute_browser_action": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+F",
-        "mac": "MacCtrl+Shift+F"
-      },
-      "description": "Opens index.html"
-    }
-  }
+    "name":"PTSD Filter",
+    "description":"Extension to block images that may trigger PTSD using a neural network",
+    "version":"0.1",
+    "manifest_version":2,
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["*"],
+        "js": ["content.js"]
+    }],
+    "browser_action": {
+      "default_popup":"index.html",
+      "default_icon":"icon.png"
+    },
+    "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+F",
+          "mac": "MacCtrl+Shift+F"
+        },
+        "description": "Opens index.html"
+      }
 }
