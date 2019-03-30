@@ -1,20 +1,24 @@
-/*
 console.log("hi");
+var mod;
+
+async function init_model() {
+    mod = await tf.loadLayersModel("keras/model/model.json");
+}
+
+init_model();
 
 chrome.runtime.onMessage.addListener(
     function(arg, send, sendResponse) {
         console.log(arg.imgs[0].src);
         var args = arg.imgs;
         for (var i = 0; i < args.length; i ++) {
-            console.log(args[i].src)
-            chrome.downloads.download({
-                url: args[i],
-                filename: args[i].replace(/[^a-zA-Z0-9]/g,'-')
-            });
+            console.log(args[i].source);
+            pred = mod.predict(tf.tensor([args[i].data]), {batchSize: 1, verbose: true});
+            pred.print();
 
         }
     }
-);*/
+);
 /*
 // Define a model for linear regression.
 const model = tf.sequential();
@@ -36,7 +40,7 @@ console.log(model.predict(tf.tensor2d([5], [1, 1])));
 console.log("hi");
 model.save('downloads://my-model');
 
-*/
+/*
 a = [];
 for (var i = 0; i < 100; i ++) {
     b = []
@@ -54,3 +58,4 @@ async function testfunc (img) {
 }
 
 testfunc(test);
+*/
