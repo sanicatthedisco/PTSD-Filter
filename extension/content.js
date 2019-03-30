@@ -1,9 +1,9 @@
 class Image {
-  constructor(o,s,n,d) {
+  constructor(o,n) {
     this.object = o;
-    this.source = s;
+    this.source = o.src;
     this.id = n;
-    this.display = d;
+    this.display = o.getAttribute("display");
   }
   unblock() {
     this.object.style.display = this.display;
@@ -19,7 +19,7 @@ var imageObs = [];
 for (var i = 0; i < allImages.length; i ++) {
     console.log(allImages[i].src);
     imgSrcs.push(allImages[i].src);
-    imageObs.push(new Image(allImages[i],allImages[i].src,i,allImages[i].getAttribute("display")));
+    imageObs.push(new Image(allImages[i],i));
     imageObs[i].block();
     console.log(allImages[i].getAttribute("display"));
 }
