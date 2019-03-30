@@ -8,8 +8,8 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://www.google.com/", "https://www.google.com/", "http://localhost/Test%20Page/testpage.html"],
-            "js": ["content.js"]
+            "matches": ["https://www.google.com/", "https://www.google.com/", "file:///C:/Users/Jacob%20Kerr/Documents/GitHub/PTSD-Filter/Test%20Page/testpage.html"],
+            "js": ["test.js"]
         }
     ],
     "browser_action": {
