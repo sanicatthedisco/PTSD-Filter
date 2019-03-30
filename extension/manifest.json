@@ -4,7 +4,7 @@
     "version":"0.1",
     "manifest_version":2,
     "background": {
-        "page":"background.html"
+        "scripts":["keras/keras.js", "background.js"]
     },
     "content_scripts": [
         {
@@ -24,6 +24,15 @@
         "description": "Opens index.html"
     }
   },
-"permissions": ["activeTab", "tabs", "background", "downloads"],
+"permissions": [
+    "activeTab",
+    "declarativeContent",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "storage",
+    "tabs",
+    "downloads"
+  ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
