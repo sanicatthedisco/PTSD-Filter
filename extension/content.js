@@ -24,6 +24,7 @@ for (var i = 0; i < allImages.length; i ++) {
 var param = {imgs : imgSrcs}
 chrome.runtime.sendMessage(param);
 
+//Testing unblock method
 for (var i = 0; i < imageObs.length; i++) {
   imageObs[i].unblock();
 }
