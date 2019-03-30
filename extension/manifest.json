@@ -8,7 +8,7 @@
         "persistent": false
     },
     "content_scripts": [{
-        "matches": ["*"],
+        "matches": ["*://*.*.*/*"],
         "js": ["content.js"]
     }],
     "browser_action": {
