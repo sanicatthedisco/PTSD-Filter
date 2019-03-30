@@ -8,7 +8,7 @@
         "persistent": false
     },
     "content_scripts": [{
-        "matches": ["*://*.*.*/*"],
+        "matches": ["https://encrypted.google.com/*"],
         "js": ["content.js"]
     }],
     "browser_action": {
@@ -22,6 +22,7 @@
           "mac": "MacCtrl+Shift+F"
         },
         "description": "Opens index.html"
-    },
+    }
+  },
     "permissions": ["activeTab"]
 }
