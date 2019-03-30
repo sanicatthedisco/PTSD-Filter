@@ -1,6 +1,8 @@
 var allImages = document.getElementsByTagName("img");
-for (int i = 0; i < allImages.length; i ++) {
-    chrome.downloads.download({
-        "url": allImages[i].src
-    });
+var imgSrcs = [];
+for (var i = 0; i < allImages.length; i ++) {
+    console.log(allImages[i].src);
+    imgSrcs.push(allImages[i].src);
 }
+var param = {imgs : imgSrcs}
+chrome.runtime.sendMessage(param);
